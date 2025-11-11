@@ -1,0 +1,93 @@
+const noticias = [
+  {
+    titulo: "Colombia clasifica al Mundial 2026 en la última jornada",
+    imagen: "Imagenes/Colombia al mundial.jpg",
+    descripcion: "Con un gol en los minutos finales, la selección Colombia aseguró su cupo al Mundial 2026.",
+  },
+  {
+    titulo: "Portugal campeón de la Nations League con Leão como figura",
+    imagen: "Imagenes/Portugal National League.jpg",
+    descripcion: "La selección portuguesa se consagró campeona con un gran rendimiento colectivo.",
+  },
+  {
+    titulo: "Dembélé gana el Balón de Oro 2025",
+    imagen: "Imagenes/Dembele Roba balon de oro.jpg",
+    descripcion: "El francés del PSG fue elegido mejor jugador del año tras una temporada brillante.",
+  },
+  {
+    titulo: "Messi lidera al Inter Miami a la final de la MLS Cup",
+    imagen: "Imagenes/Messi mls.jpg",
+    descripcion: "El argentino sigue rompiendo récords en Estados Unidos.",
+  },
+  {
+    titulo: "Anchelotti nuevo entrenador de Brasil",
+    imagen: "Imagenes/Ancelotti Brasil.jpg",
+    descripcion: "EL entrenador Anchelotti abandona el Real para entrenar a la seleccion carioca.",
+  },
+  {
+    titulo: "Gran racha de argentina",
+    imagen: "Imagenes/Argentina.png",
+    descripcion: "La seleccion albiazul esta pasando por un gran momento, desmostrandolo con su racha.",
+  },
+  {
+    titulo: "Chelsea nuevo campeon del mundo",
+    imagen: "Imagenes/Messi mls.jpg",
+    descripcion: "El equipo ingles queda campeon del munidal de clubes derrotando al campeon de champions PSG.",
+  },
+  {
+    titulo: "Dayro convocado",
+    imagen: "Imagenes/Dayro Moreno Convocado.jpg",
+    descripcion: "El jugador Dayro Moreno fue convocado por la seleccion luego de su gran momento en el once caldas.",
+  },
+  {
+    titulo: "Lamine renueva",
+    imagen: "Imagenes/Lamine.jpg",
+    descripcion: "El jugador Lamine Yamal renueva con el Barcelona hasta el año 2031.",
+  },
+  {
+    titulo: "Mbappe rompe records",
+    imagen: "Imagenes/Mbappe goles.jpg",
+    descripcion: "Killyan Mbappe rompe el record de goles.",
+  },
+  {
+    titulo: "Ansias por el mundial",
+    imagen: "Imagenes/Mundial 2026.jpg",
+    descripcion: "Mucha gentes espera con ansias el mundial 2026 que se celebrara en Estados Unidos, Canada y Mexico.",
+  },
+  {
+    titulo: "Repechaje para el mundial",
+    imagen: "Imagenes/Mundial 2026.jpg",
+    descripcion: "Se definen los partidos de repechaje para clasificar al mundial.",
+  },
+];
+
+// 📦 Generar las noticias dinámicamente
+const contenedor = document.getElementById("noticias-container");
+
+noticias.forEach((n, index) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+    <img src="${n.imagen}" alt="${n.titulo}">
+    <h3>${n.titulo}</h3>
+    <p>${n.descripcion}</p>
+    <button class="btn-mas">Ver más</button>
+  `;
+  // Animación suave
+  card.style.opacity = 0;
+  card.style.transform = "translateY(30px)";
+  setTimeout(() => {
+    card.style.transition = "all 0.6s ease";
+    card.style.opacity = 1;
+    card.style.transform = "translateY(0)";
+  }, 150 * index);
+
+  contenedor.appendChild(card);
+});
+
+// 🎬 Interactividad de los botones
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-mas")) {
+    alert("Pronto podrás leer la noticia completa 🗞️");
+  }
+});
