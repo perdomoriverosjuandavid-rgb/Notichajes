@@ -1,0 +1,16 @@
+Proyecto/
+│
+├── index.html
+├── noticias.html
+├── fichajes.html
+│
+├── Css/
+│   └── Css\Style.Css
+│
+├── JS/
+│   ├── Java\Js Noticias
+│   ├── Java\Js Fichajes
+│   └── Java\JS Main
+│
+└── Imagenes/
+    ├── (todas tus imágenes)

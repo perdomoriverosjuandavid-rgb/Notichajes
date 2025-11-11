@@ -1,0 +1,130 @@
+/* Estilo para tarjetas (cards) */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    max-width: 600px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+.card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.btn-mas {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-mas:hover {
+    background-color: #0056b3;
+}
+
+/* INDEX INTERACTIVO */
+
+#secciones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tarjeta {
+    background-color: white;
+    border-radius: 10px;
+    width: 280px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 10px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.tarjeta h2 {
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    color: #333;
+}
+
+#titulo {
+    animation: aparecer 1.2s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Estilo general */
+body {
+    background-color: #20b2c7;  /* 💙 Celeste claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #03303a;             /* Texto azul oscuro */
+    text-align: center;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+p {
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.5;
+}
+
+/* Botones */
+.boton-boof {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;  /* 💙 Azul */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-boof:hover {
+    background-color: #0056b3;  /* 💙 Azul más oscuro */
+    transform: scale(1.05);
+}

@@ -1,0 +1,19 @@
+const fichajes = [
+  { jugador: "Richard Ríos", equipo: "Benfica", imagen: "Imagenes/Richard Rios.jpg" },
+  { jugador: "Luis Díaz", equipo: "Bayern Múnich", imagen: "Imagenes/Luis Diaz.jpg" },
+  { jugador: "Florian Wirtz", equipo: "Liverpool", imagen: "Imagenes/Florian Wirtz.jpg" },
+  { jugador: "Marcus Rashford", equipo: "Barcelona", imagen: "Imagenes/Rashford.jpg" }
+];
+
+const contenedorF = document.getElementById("fichajes-container");
+
+fichajes.forEach(f => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+    <img src="${f.imagen}" alt="${f.jugador}">
+    <h3>${f.jugador}</h3>
+    <p>Nuevo jugador del ${f.equipo}</p>
+  `;
+  contenedorF.appendChild(card);
+});

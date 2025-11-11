@@ -1,0 +1,80 @@
+// Mensajes aleatorios de bienvenida
+const mensajes = [
+    "¡El fútbol no se detiene, y nosotros tampoco! ⚽",
+    "Bienvenido a la casa del mercado de pases 💰",
+    "Últimas noticias, rumores y goles, todo aquí 🔥",
+    "¡Siente la pasión del fútbol en Notichajes! ❤️⚽"
+  ];
+  
+  const titulo = document.getElementById("titulo");
+  titulo.addEventListener("mouseover", () => {
+    titulo.style.color = "#0056b3";
+    titulo.style.transition = "color 0.5s";
+  });
+  titulo.addEventListener("mouseout", () => {
+    titulo.style.color = "#03303a";
+  });
+  
+  // Mostrar mensaje aleatorio al cargar
+  window.addEventListener("load", () => {
+    const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+    const banner = document.createElement("div");
+    banner.textContent = mensaje;
+    banner.classList.add("banner");
+    document.body.insertBefore(banner, document.body.firstChild);
+  
+    setTimeout(() => {
+      banner.style.opacity = "0";
+      banner.style.transition = "opacity 1s";
+    }, 3500);
+    setTimeout(() => banner.remove(), 4500);
+  });
+  
+  // Redirecciones animadas
+  document.getElementById("btnFichajes").addEventListener("click", () => {
+    animarSalida(() => (window.location.href = "fichajes.html"));
+  });
+  
+  document.getElementById("btnNoticias").addEventListener("click", () => {
+    animarSalida(() => (window.location.href = "noticias.html"));
+  });
+  
+  // Animación de salida
+  function animarSalida(callback) {
+    const overlay = document.createElement("div");
+    overlay.classList.add("fade-out");
+    document.body.appendChild(overlay);
+    setTimeout(callback, 700);
+  }
+  
+  // Estilo para el fade-out (inyectado desde JS)
+  const style = document.createElement("style");
+  style.textContent = `
+  .fade-out {
+    position: fixed;
+    inset: 0;
+    background: #20b2c7;
+    opacity: 0;
+    animation: desaparecer 0.7s forwards;
+    z-index: 100;
+  }
+  @keyframes desaparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .banner {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+  `;
+  document.head.appendChild(style);
+  
